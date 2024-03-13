@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/pagewindow.css">
+        <link rel="stylesheet" href="../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Grafuri neorientate</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiactive" href="grneorientate.html">Definiție</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="neorientate/tipurigrn.html">Tipuri de grafuri</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="neorientate/conexitategrn.html">Conexitate</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                        <table width=100%>
+                            <tr><td width=70% style="vertical-align: top; padding: 15px;">
+                                <div class="textbox">Un graf neorientat este o pereche ordonată de mulțimi <i>G=(X,U)</i>.
+                                    Mulțimea <i>X</i> este o mulțime nevidă si finita de elemente denumite vârfurile grafului.
+                                    Mulțimea <i>U</i> este o mulțime de perechi formate cu ajutorul vârfurilor din graf.
+                                    Perechile de vârfuri din mulțimea <i>U</i> sunt neordonate si se numesc muchii.
+                                    Ele nu au direcție.
+                                    Muchia formata de vârfurile <i>x</i> si <i>y</i> se noteaza cu <i>[x,y]</i>.</div>
+                                <div class="textbox">Într-un graf neorientat se numește grad al unui vârf numărul de vârful adiacente cu acesta sau numărul de muchii incidente cu acesta.
+                                    Gradul unui vârf <i>x</i> se notează <i>d(x)</i>.</div>
+                                <div class="textbox">Listă de adiacență este o colecție de liste neordonate folosită pentru a reprezenta un anumit graf.
+                                    Fiecare listă descrie mulțimea vecinilor unui nod din graf.
+                                    Aceasta este una din mai frecvent utilizate reprezentări a grafurilor pentru utilizarea în programe de calculator.</div>
+                                <div class="textbox">Principala alternativă la lista de adiacență este matricea de adiacență, matricea ale cărei rânduri și coloane sunt indexate după noduri și ale cărei celule conțin o valoare booleană care indică dacă există muchie între nodurile corespunzătoare rândului și coloanei celulei.
+                                    Pentru un graf în care majoritatea perechilor de noduri nu sunt conectate prin muchii o listă de adiacență este semnificativ mai eficientă ca spațiu decât o matrice de adiacență (stocată ca o matrice), spațiul utilizat de lista de adiacență este proporțional cu numărul de muchii și noduri din graf, în timp ce pentru o matrice de adiacență stocată în acest fel spațiul ocupat este proporțional cu pătratul numărului de noduri.</div>
+                                <div class="textbox" style="padding-bottom: 20px;">Într-o listă de adiacență, vecinii fiecărui nod pot fi enumerați în mod eficient, în timp proporțional cu gradul nodului. 
+                                    Într-o matrice de adiacență, această operațiune are nevoie de timp proporțional cu numărul de noduri din graf, care poate fi semnificativ mai mare decât gradul.
+                                    Pe de altă parte, matricea de adiacență permite verificarea dacă două noduri sunt adiacente reciproc, în timp constant.</div>
+                                <table width=90% class="pagealign">
+                                    <tr><td width=50%>
+                                        <table width=100%>
+                                            <tr><td colspan="5">
+                                                <div class="textboxend" style="padding-bottom: 15px;"><b>Gradul vârfurilor grafului alăturat</b></div>
+                                            </td></tr>
+                                            <tr><td><div class="textboxend"><i>d(1)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d(2)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d(3)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d(4)=1</i></div></td>
+                                                <td><div class="textboxend"><i>d(5)=1</i></div></td></tr>
+                                        </table>
+                                    </td><td width=50%></td></tr>
+                                </table>
+                            </td><td witdh=30% style="vertical-align: top; padding: 15px;">
+                                <table width=100% height=100%>
+                                    <tr><td style="padding-bottom: 15px;"><img src="../src/graf/grafn.svg" alt="Graf neorientat" width="100%"></td></tr>
+                                    <tr><td style="padding-top: 15px;"><img src="../src/matrice/matricegrn.svg" alt="Matrice de adiacență" width="100%"></td></tr>
+                                </table>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../index.html" class="navlink">Teoria Grafurilor</a> / <a href="grneorientate.html" class="navlink">Grafuri Neorientate</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

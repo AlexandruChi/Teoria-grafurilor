@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/pagewindow.css">
+        <link rel="stylesheet" href="../../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Grafuri orientate</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbibordera" href="../grorientate.html">Definiție</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiactive" href="tipurigro.html">Tipuri de grafuri</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="conexitategro.html">Conexitate</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                        <table width=100%>
+                            <tr><td style="vertical-align: top; padding: 15px;">
+                                <table width=95% class="pagealign">
+                                    <tr><td>
+            							<div class="textboxend" style="text-align: center;">Graful inițial</div>
+                                    </td><td>
+                                        <div class="textboxend" style="text-align: center;">Graf parțial</div>
+                                    </td><td>
+                                        <div class="textboxend" style="text-align: center;">Subgraf</div>
+                                    </td><td>
+                                        <div class="textboxend" style="text-align: center;">Graf complet</div>
+                                    </td></tr>
+                                    <tr><td style="padding: 15; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/goinitial.svg" alt="Graful inițial" style="width: 70%; display: block;" class="pagealign">
+                                    </td><td style="padding: 15; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/gopartial.svg" alt="Graf parțial" style="width: 70%; display: block;" class="pagealign">
+                                    </td><td style="padding: 15; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/gosubgraf.svg" alt="Subgraf" style="width: 70%; display: block;" class="pagealign">
+                                    </td><td style="padding: 15; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/gocomplet.svg" alt="Graf complet" style="width: 70%; display: block;" class="pagealign">
+                                    </td></tr>
+                                </table>
+                                <div class="textbox" style="padding-top: 10px; padding-bottom: 20px;">Un graf parțial al grafului <i>G=(V,U)</i> este graful orientat <i>G<sub>1</sub>=(V,U<sub>1</sub>)</i>, unde <i>U<sub>1</sub>⊆U</i>.
+                                    Un graf parțial al unui graf orientat <i>G</i> are aceeași mulțime de vârfuri ca și <i>G</i>, iar mulțimea arcelor este o submulțime a lui <i>U</i> sau chiar <i>U</i>.
+                                    Un graf parțial al grafului <i>G</i>, se obține păstrând vârfurile și eliminând eventual niște arce (se pot elimina și toate arcele sau niciunul).
+                                    Un subgraf al grafului <i>G=(V,U)</i> graful orientat <i>G<sub>1</sub>=(V<sub>1</sub>,U<sub>1</sub>)</i> unde <i>U<sub>1</sub>⊆U</i>, <i>V<sub>1</sub>⊆V</i>, <i>U<sub>1</sub></i> conține toate arcele din <i>U</i> care au extremitățile în <i>V<sub>1</sub></i>.
+                                    Un subgraf al grafului <i>G</i>, se obține ştergând eventual anumite vârfuri și odată cu acestea și arcele care le admit ca extremitate (nu se pot șterge toate vârfurile deoarece s-ar obține un graf cu mulțimea vârfurilor vidă).
+                                    Graful <i>G</i> se numește graf complet dacă oricare două vârfuri distincte ale sale sunt adiacente.
+                                    Două vârfuri <i>x</i> și <i>y</i> sunt adiacente dacă între ele există arcul <i>(x,y)</i>, între ele există arcul <i>(y,x)</i>, sau între ele există arcele <i>(x,y)</i> și <i>(y,x)</i>.
+                                    Numărul de grafuri orientate complete cu <i>n</i> noduri este <i>3<sup><sup>n(n-1)</sup>⁄<sub>2</sub></sup></i>.</div>
+                                <table width=80% class="pagealign">
+                                    <tr><td>
+                                        <div class="textboxend" style="text-align: center;">Graful turneu</div>
+                                    </td><td>
+                                        <div class="textboxend" style="text-align: center;">Graf hamiltonian</div>
+                                    </td><td>
+                                        <div class="textboxend" style="text-align: center;">Graf eulerian</div>
+                                    </td></tr>
+                                    <tr><td style="padding: 15px; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/goturneu.svg" alt="Graful turneu" style="width: 70%; display: block;" class="pagealign">
+                                    </td><td style="padding: 15px; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/gohamiltonian.svg" alt="Graf hamiltonian" style="width: 70%; display: block;" class="pagealign">
+                                    </td><td style="padding: 15px; padding-left: 0; padding-right: 0;">
+                                        <img src="../../src/graf/goeulerian.svg" alt="Graf eulerian" style="width: 70%; display: block;" class="pagealign">
+                                    </td></tr>
+                                </table>
+                                <div class="textboxend" style="padding-top: 10px;">Un graf orientat este turneu, dacă oricare ar fi două vârfuri <i>i</i> şi <i>j</i>, <i>i≠j</i>, între ele există un singur arc, arcul <i>(i,j)</i> sau arcul <i>(j,i)</i>.
+                                    Orice graf turneu este graf complet.
+                                    Un graf cu <i>n</i> noduri poate avea <i>2<sup><sup>n(n-1)</sup>⁄<sub>2</sub></sup></i> grafuri turneu.
+                                    În orice graf turneu există un drum elementar care trece prin toate vârfurile grafului.
+                                    Într-un graf orientat <i>G=(V,U)</i> un drum elementar care conține toate nodurile grafului se numește drum hamiltonian și un circuit elementar care conține toate nodurile grafului se numește circuit hamiltonian.
+                                    Un graf care conține un circuit hamiltonian se numește graf hamiltonian.
+                                    Într-un graf orientat <i>G=(V,U)</i> un drum care conține toate arcele grafului se numește drum eulerian și un circuit care conține toate arcele grafului se numește circuit eulerian.
+                                    Un graf care conține un circuit eulerian se numește graf eulerian.
+                                    Un graf fără noduri izolate este eulerian dacă și numai dacă este conex și pentru fiecare nod, gradul interior este egal cu cel exterior.</div>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../../index.html" class="navlink">Teoria Grafurilor</a> / <a href="../grorientate.html" class="navlink">Grafuri Orientate</a> / <a href="tipurigro.html" class="navlink">Tipuri De Grafuri</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

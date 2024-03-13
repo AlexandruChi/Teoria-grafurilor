@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/pagewindow.css">
+        <link rel="stylesheet" href="../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Grafuri orientate</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiactive" href="grneorientate.html">Definiție</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="orientate/tipurigro.html">Tipuri de grafuri</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="orientate/conexitategro.html">Conexitate</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                        <table width=100%>
+                            <tr><td width=80% style="vertical-align: top; padding: 15px;padding-bottom: 10px; padding-right: 10px;">
+                                <div class="textbox">Un graf orientat este o pereche ordonată de mulțimi notată <i>G=(V,U)</i> unde <i>V</i> este o mulțime finită şi nevidă ale cărei elemente se numesc noduri sau vârfuri și <i>U</i> este o mulțime de perechi ordonate de elemente distincte din <i>V</i> ale cărei elemente se numesc arce.</div>
+                                <div class="textbox">Pentru arcul <i>u=(x,y)</i>, se numesc extremități ale sale nodurile <i>x</i> şi <i>y</i>, <i>x</i> este extremitate inițială, predecesor al lui <i>y</i>, <i>y</i> este extremitate finală, succesor al lui <i>x</i>.
+                                    Dacă într-un graf există arcul <i>u=(x,y)</i> se spune despre nodurile <i>x</i> şi <i>y</i> că sunt adiacente.
+                                    Dacă <i>u<sub>1</sub></i> și <i>u<sub>2</sub></i> sunt două arce ale aceluiaşi graf, <i>u<sub>1</sub></i> și <i>u<sub>2</sub></i> sunt incidente dacă au o extremitate comună (<i>u<sub>1</sub>=(x,y)</i> şi <i>u<sub>2</sub>=(y,z)</i> sunt incidente).
+                                    Dacă <i>u<sub>1</sub>=(x,y)</i> este un arc într-un graf, se spune despre el și nodul <i>x</i> sau nodul <i>y</i> că sunt incidente.</div>
+                                <div class="textboxend">Într-un graf orientat <i>G=(V,U)</i> grad exterior al nodului <i>x</i> este numărul arcelor de forma <i>(x,y)</i>, notat <i>d<sup>+</sup>(x)</i>, iar grad interior al nodului <i>x</i> este numărul arcelor de forma <i>(y,x)</i>, notat <i>d<sup>-</sup>(x)</i>.
+                                    Într-un graf orientat, suma gradelor exterioare a tuturor nodurilor este egală cu suma gradelor interioare a tuturor nodurilor și cu numărul de arce. Un nod <i>x</i> se numește izolat dacă <i>d<sup>+</sup>(x)=d<sup>-</sup>(x)=0</i>.
+                                    Într-un graf orientat cu <i>n</i> noduri, în care nu există mai multe arce de la un nod la altul, matricea de adiacență a grafului este o matrice cu <i>n</i> linii și <i>n</i> coloane și elemente <i>0</i> sau <i>1</i>, <i>A<sub>(i,j)</sub>=1</i> dacă există arcul <i>(i,j)</i> și <i>A<sub>(i,j)</sub>=0</i> dacă există nu arcul <i>(i,j)</i>.</div>
+                            </td><td witdh=20% style="vertical-align: top; padding: 15px; padding-bottom: 10px; padding-left: 10px;">
+                                    <img src="../src/graf/grafo.svg" alt="Graf neorientat" width="100%">
+                            </td></tr>
+                            <tr><td width=80% style="text-align: center; padding-right: 10px; padding-left: 15px;">
+                                <img src="../src/matrice/matricegroc.svg" alt="Muchii" width=70%>
+                            </td><td width=20% style="padding-right: 15px; padding-left: 10px;">
+                                <img src="../src/matrice/matricegrob.svg" alt="Vârfuri" width="100%">
+                            </td></tr>
+                            <tr><td width=80% style="padding: 15px; padding-top: 10px; padding-right: 10px;">
+                                <table width=90% class="pagealign">
+                                    <tr><td width=50%>
+                                        <table width=100%>
+                                            <tr><td colspan="6">
+                                                <div class="textbox" style="padding-bottom: 15px;"><b>Gradul exterior al vârfurilor grafului alăturat</b></div>
+                                            </td></tr>
+                                            <tr><td><div class="textboxend"><i>d<sup>+</sup>(1)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>+</sup>(2)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>+</sup>(3)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>+</sup>(4)=1</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>+</sup>(5)=1</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>+</sup>(6)=1</i></div></td></tr>
+                                            <tr><td colspan="6">
+                                                <div class="textbox" style="padding-bottom: 15px; padding-top: 15px;"><b>Gradul interior al vârfurilor grafului alăturat</b></div>
+                                            </td></tr>
+                                            <tr><td><div class="textboxend"><i>d<sup>-</sup>(1)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>-</sup>(2)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>-</sup>(3)=2</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>-</sup>(4)=1</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>-</sup>(5)=1</i></div></td>
+                                                <td><div class="textboxend"><i>d<sup>-</sup>(6)=1</i></div></td></tr>
+                                        </table>
+                                    </td><td width=50%></td></tr>
+                                </table>
+                            </td><td width=20% style="padding: 15px; padding-top: 10px; padding-left: 10px;">
+                                <img src="../src/matrice/matricegroa.svg" alt="Matrice de adiacență" width="100%">
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../index.html" class="navlink">Teoria Grafurilor</a> / <a href="grorientate.html" class="navlink">Grafuri Orientate</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

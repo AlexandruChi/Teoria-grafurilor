@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/pagewindow.css">
+        <link rel="stylesheet" href="../../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Parcurgerea grafurilor</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiborder" href="../parcurgere.html">Aplicații</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbibordera" href="parcurgerea.html">Parcurgerea în adâncime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiactive" href="parcurgerel.html">Parcurgerea în lățime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="parcurgerearw.html">Algoritmul Roy-Warshall</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                       <table width=100%>
+                            <tr><td style="padding: 15px; vertical-align: top;">
+                                <table width=100%>
+                                    <tr><td style="vertical-align: top;" width=50%>
+                                        <div class="textbox">În parcurgerea în lățime se parcurge vârful de start, apoi vecinii acestuia, apoi vecinii nevizitați ai acestora, etc, până când sunt vizitate toate vârfurile accesibile.
+                                            Practic, pentru a stabili ordinea de vizitare se folosește o coadă, iar pentru a stabili dacă un vârf a fost sau nu vizitat se folosește un vector caracteristic.
+                                            Dacă graful nu este conex, în urma parcurgerii nu se vor vizita toate vârfurile. În urma parcurgerii în adâncime, muchiile folosite pentru parcurgere formează un arbore.
+                                            Acest arbore este graf parțial al grafului dat (dacă graful este conex), și se numește arbore parțial de parcurgere.</div>
+                                        <div class="textboxend">Funcția de mai jos presupune că un graf cu <i>n</i> vârfuri este memorat prin intermediul matricei de adiacență, vectorul <i>x[]</i> reprezintă coada, vectorul <i>x[]</i>, aceste variabile fiind declarate global.
+                                            Funcția returnează numărul de elemente care au fost vizitate.</div>
+                                    </td><td width=50%>
+                                        <table width=100% style="padding-left: 15px;">
+                                            <tr><td width=60%>
+                                                <div class="textbox" style="padding-right: 30px; text-align: center;">Vârfurile grafului au fost parcurse<br>în ordinea: <i>5 2 4 7 1 3 6 8 9</i></div>
+                                            </td><td width=40%>
+                                                <img src="../../src/graf/parcurgerel.png" alt="Vârfurile grafului au fost parcurse în ordinea: 5 2 4 7 1 3 6 8 9" width=100%>
+                                            </td></tr>
+                                        </table>
+                                    </td></tr>
+                                </table>
+                                <div class="textbox" style="font-size: larger; padding-top: 10px; padding-left: 25px; padding-bottom: 10px;"><strong>Implementare C++</strong></div>
+                                <div style="padding-left: 50px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #7F0055; font-weight: bold;">int</span> <span style="font-weight: bold;">bfs</span>(<span style="color: #7F0055; font-weight: bold;">int</span> start){
+	<span style="color: #7F0055; font-weight: bold;">int</span> i,k,st,dr; <span style="color: #3F7F5F;">//inițializez coada</span>
+	st=dr=1;
+	x[1]=start;
+	v[start]=1; <span style="color: #3F7F5F;">//vizitez vârful inițial</span>
+	<span style="color: #7F0055; font-weight: bold;">while</span>(st&#x003C=dr){ <span style="color: #3F7F5F;">//cât timp coada nu este vidă</span>
+		k=x[st]; <span style="color: #3F7F5F;">//preiau un element din coadă</span>
+		<span style="color: #7F0055; font-weight: bold;">for</span>(i=1;i&#x003C=n;i++) <span style="color: #3F7F5F;">//parcurg vârfurile</span>
+			if(v[i]==0 <span style="color: #7F0055; font-weight: bold;">and</span> a[k][i]==1){
+				<span style="color: #3F7F5F;">//dacă i este vecin cu k și nu este vizitat</span>
+				v[i]=1; <span style="color: #3F7F5F;">//îl vizitez</span>
+				x[++dr]=i; <span style="color: #3F7F5F;">//îl adaug în coadă</span>
+			}
+		st++; <span style="color: #3F7F5F;">//șterg din coadă</span>
+	}
+	<span style="color: #7F0055; font-weight: bold;">return</span> dr; <span style="color: #3F7F5F;">//returnăm numărul de vârfuri vizitate</span>
+}</pre>
+                                    </code>
+                                </div>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../../index.html" class="navlink">Teoria Grafurilor</a> / <a href="../parcurgere.html" class="navlink">Parcurgerea Grafurilor</a> / <a href="parcurgerel.html" class="navlink">Parcurgerea În Lățime</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

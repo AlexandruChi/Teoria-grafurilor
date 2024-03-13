@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/pagewindow.css">
+        <link rel="stylesheet" href="../../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Grafuri orientate</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiborder" href="../grorientate.html">Definiție</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbibordera" href="tipurigro.html">Tipuri de grafuri</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiactive" href="conexitategro.html">Conexitate</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                       <table width=100%>
+                            <tr><td style="vertical-align: top; padding: 15px; padding-bottom: 0;" width=50%>
+                                <div class="textboxend">Se numește lanț, în graful <i>G=(V,U)</i>, o succesiune de arce, notată <i>L=(u<sub>1</sub>,u<sub>2</sub>,…,u<sub>k</sub>)</i> cu proprietatea ca oricare două arce consecutive au o extremitate comună (nu are importanță orientarea arcelor).
+                                    Lungimea unui lanț este egală cu numărul de arce din care este alcătuit.
+                                    Primul nod și ultimul nod dintr-un lanț formează extremitățile lanțului.
+                                    Se numește drum în o succesiune de noduri, notată <i>D=(x<sub>1</sub>,x<sub>2</sub>,…,x<sub>k</sub>)</i>, cu proprietatea că pentru orice <i>1≤i&#x003Ck</i>, <i>(x<sub>i</sub>,x<sub>i</sub>+1)</i> este arc în <i>G</i>.
+                                    Lungimea unui drum este egală cu numărul de arce din care este alcătuit.
+                                    Pentru un drum <i>D=(x<sub>1</sub>,x<sub>2</sub>,…,x<sub>k</sub>)</i>, nodurile <i>x<sub>1</sub></i> și <i>x<sub>k</sub></i> reprezintă extremitățile – inițială, respectiv finală.
+                                    Un lanț (drum) se numește elementar dacă în el nu se repetă noduri.
+                                    Un lanț (drum) se numește simplu dacă în el nu se repetă arce.
+                                    Se numește circuit un drum simplu în care extremitatea inițială și finală sunt egale.
+                                    Se numește circuit elementar un circuit în care, cu excepția extremităților, nu se repetă noduri.
+                                    Lungimea unui circuit este reprezentată de numărul de arce din care acesta este alcătuit.</div>
+                            </td><td width=50%>
+                                <table width=100% style="vertical-align: top; padding: 15px; padding-left: 0;">
+                                    <tr><td width=65%>
+                                        <div class="textbox" style="padding-left: 10px;"><i>L=(5,4,2,6,1)</i> este un lanț elementar.</div>
+                                        <div class="textbox" style="padding-left: 10px;"><i>D=(3,2,1,6,4</i>) este drum elementar.</div>
+                                        <div class="textbox" style="padding-left: 10px;"><i>D=(3,2,1,6,2,4)</i> este drum neelementar simplu.</div>
+                                        <div class="textboxend" style="padding-left: 10px;"><i>(1,6,2,1)</i> și <i>(1,6,4,2,1)</i> sunt circuite elementare.</div>
+                                    </td><td width=35%>
+                                        <img src="../../src/graf/goconex.svg" alt="Graf conex" width=100%>
+                                    </td></tr>
+                                </table>
+                            </td></tr>
+                            <tr><td colspan="2" style="vertical-align: top; padding: 15px; padding-top: 0;" width=50%>
+                                <div class="textbox" style="padding-top: 10px;">Un graf orientat <i>G=(V,E)</i> este tare conex dacă pentru orice pereche de noduri distincte <i>(x,y)</i> există cel puțin un drum de la <i>x</i> la <i>y</i> și există cel puțin un drum de la <i>y</i> la <i>x</i>. Pentru un graf orientat, se numește componentă tare conexă un subgraf tare conex maximal – prin adăugarea a încă unui nod, subgraful obținut nu mai este tare conex.
+                                    Verificare tare conexității unui graf orientat poate fi privită ca un caz particular al determinării componentelor tare conexe, dacă graful are o singură componentă tare conexă atunci el este tare conex.</div>        
+                                <table width=66% class="pagealign">
+                                    <tr><td width=37%>
+                                        <div class="textbox" style="text-align: center; padding-top: 5px;">Graf orientat inițial <i>G=(V,E)</i></div>
+                                    </td><td width=26%></td><td width=37%>
+                                        <div class="textbox" style="text-align: center; padding-top: 5px;">Graful orientat transpus <i>G<sub>T</sub>=(V,E<sub>T</sub>)</i></div>
+                                    </td></tr><tr><td width=37%>
+                                        <img src="../../src/graf/gotinitial.svg" alt="Graf orientat inițial G=(V,E)" width=100%>
+                                    </td><td width=26%></td><td width=37%>
+                                        <img src="../../src/graf/gottranspus.svg" alt="Graful orientat transpus G_T=(V,E_T)" width=100%>
+                                    </td></tr>
+                                </table>
+                                <div class="textboxend" style="padding-top: 15px;">Se numește graf transpus al lui <i>G=(V,E)</i> graful orientat <i>G<sub>T</sub>=(V,E<sub>T</sub>)</i>, cu aceleași mulțimea a nodurilor și pentru orice pereche de noduri are loc: <i>(x,y)</i> este arc în <i>G</i> dacă și numai dacă <i>(y,x)</i> este arc în <i>G<sub>T</sub></i>.
+                                    Să observă pentru două noduri oarecare, <i>x</i> și <i>y</i>, existența unui drum de la <i>x</i> la <i>y</i> poate fi determinată cu o parcurgere în graful <i>G</i>, pornind din nodul <i>x</i> și existența unui drum de la <i>y</i> la <i>x</i> poate fi determinată cu o parcurgere în graful <i>G<sub>T</sub></i>, pornind tot din nodul <i>x</i>.</div>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../../index.html" class="navlink">Teoria Grafurilor</a> / <a href="../grorientate.html" class="navlink">Grafuri Orientate</a> / <a href="conexitategro.html" class="navlink">Conexitate</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

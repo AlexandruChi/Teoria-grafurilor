@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/pagewindow.css">
+        <link rel="stylesheet" href="css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="pgs/grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="pgs/grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="pgs/parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="pgs/despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Teoria grafurilor</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiactive" href="index.html">Grafuri</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="pgs/grafuri/istorie.html">Istorie</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="pgs/grafuri/utilizarigr.html">Utifizări grafuri</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                        <table width=100%>
+                            <tr><td width=70% style="vertical-align: top; padding: 15px; padding-right: 7px;">
+                                <div class="textbox">Un graf reprezintă o structură care corespunde unui grup de obiecte, în care unele perechi de obiecte sunt grupate și legate reciproc.
+                                    Obiectele care alcătuiesc grafurile corespund unor abstracții matematice numite noduri sau vârfuri.
+                                    Fiecare legătură dintre perechile de obiecte se numesc muchii.</div>
+                                <div class="textbox">În matematică și informatică, teoria grafurilor studiază proprietățile grafurilor.
+                                    Grafurile au numeroase aplicații în diverse domenii: proiectarea circuitelor electrice, determinarea celui mai scurt drum dintre două localități, rețelele sociale (ex. Facebook), etc.
+                                    Dezvoltarea teoriei grafurilor a pornit de la probleme legate de jocuri și amuzamente matematice menite a testa ingeniozitatea.</div>
+                                <div class="textbox">Acestea au atras atenția unor matematicieni experimentați ca Euler, Hamilton, Cayley, Birkhoff iar cu trecerea anilor teoria grafurilor a devenit un domeniu bogat in rezultate și de o surprinzătoare varietate și aplicabilitate.
+                                    Primele rezultate legate de teoria grafurilor au fost obținute de matematicianul Leonard Euler, cel care a studiat Problema podurilor din Königsberg, din imaginea de mai jos.
+                                    A demonstrat că problema nu are soluție, iar în onoarea lui o categorie specială de grafuri au fost numite grafuri euleriene.</div>
+                                <div class="textbox">Grafurile sunt reprezentate în formă schematică ca un set de noduri, reprezentate prin puncte, care sunt unite două câte două de muchii, reprezentate prin linii sau arcuri.
+                                    Un graf poate fi notat ca o pereche ordonată de mulțimi, <i>G=(X,U)</i> unde <i>X</i> este o mulțime finită și nevidă de elemente, noduri, iar <i>U</i> este o mulțime de perechi de elemente din <i>X</i>, muchii.
+                                    Graful vid este graful <i>G(Ø,Ø)</i> și se notează cu <i>Ø</i>.</div>
+                                <div class="textbox">Matricea de adiacență este o matrice pătratică folosită pentru a reprezenta un graf finit.
+                                    Elementele matricei indică dacă perechea de noduri corespunzătoare sunt sau nu sunt adiacente în graf.
+                                    În cazul unui grafic finit simplu, matricea de adiacență este o matrice <i>A(0,1)</i>.
+                                    Matricea de adiacență <i>A</i> are pe elementul <i>A<sub>ij</sub></i> valoarea <i>1</i> în cazul în care există o muchie de la nodul <i>i</i> la nodul <i>j</i> sau valoarea <i>0</i> în cazul în care nu există o muchie între cele două noduri.</div>
+                                <div class="textboxend">Grafurile au o importanță mare în informatică, de exemplu: în unele problemele de sortare și căutare, elementele mulțimii pe care se face sortarea sau căutarea se pot reprezenta prin noduri într-un graf; schema logică a unui program se poate reprezenta printr-un graf orientat în care o instrucțiune sau un bloc de instrucțiuni este reprezentat printr-un nod, iar muchiile direcționate reprezintă calea de execuție; în programarea orientată pe obiecte, ierarhia claselor unui program poate fi reprezentată printr-un graf în care fiecare nod reprezintă o clasă, iar muchiile reprezintă relații între acestea (derivări, agregări).</div>
+                                </td><td witdh=30% style="vertical-align: top; padding: 10px; padding-left: 3px;">
+                                <table width=100% height=100%>
+                                    <tr><td><img src="src/graf/graf.svg" alt="Graf cu 6 noduri și 7 muchii" width="100%"></td></tr>
+                                    <tr><td><div style="padding: 15px; text-align: center; font-size: large; font-family: Arial;">Matricea de adiacență a unui graf<br>cu 6 noduri și 7 muchii</div></td></tr>
+                                    <tr><td><img src="src/matrice/matricegr.svg" alt="Matrice de adiacență" width="100%"></td></tr>
+                                </table>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="index.html" class="navlink">Teoria Grafurilor</a> / <a href="index.html" class="navlink">Grafuri</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

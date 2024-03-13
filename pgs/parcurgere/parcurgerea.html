@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/pagewindow.css">
+        <link rel="stylesheet" href="../../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Parcurgerea grafurilor</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbibordera" href="../parcurgere.html">Aplicații</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiactive" href="parcurgerea.html">Parcurgerea în adâncime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="parcurgerel.html">Parcurgerea în lățime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="parcurgerearw.html">Algoritmul Roy-Warshall</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                       <table width=100%>
+                            <tr><td style="padding: 15px; vertical-align: top;">
+                                <table width=100%>
+                                    <tr><td style="vertical-align: top;" width=50%>
+                                        <div class="textbox">Prin parcurgerea unui graf neorientat se înțelege examinarea în mod sistematic a vârfurilor, plecând dintr-un vârf dat start, astfel încât fiecare vârf accesibil din start pe muchii incidente două câte două să fie vizitat o singură dată.
+                                            Trecerea de la un vârf <i>x</i> la altul se face prin examinarea, într-o anumită ordine a vecinilor săi.
+                                            Parcurgerile grafurilor sunt frecvent utilizate în rezolvarea multor probleme.</div>
+                                        <div class="textboxend">Parcurgerea în adâncime reprezintă explorarea „naturală” a unui graf neorientat.
+                                            Este foarte asemănătoare cu modul în care un turist vizitează un oraș în care sunt obiective turistice (vârfurile grafului) și căi de acces între obiective (muchiile).
+                                            Vizitarea orașului va avea loc din aproape în aproape: se pleacă de la un obiectiv de pornire, se continuă cu un obiectiv învecinat cu acesta, apoi unul învecinat cu al doilea, etc.</div>
+                                    </td><td width=50%>
+                                        <table width=100% style="padding-left: 15px;">
+                                            <tr><td width=60%>
+                                                <div class="textbox" style="padding-left: 10px;">Parcurgerea din nodul <i>1</i>: <i>1 2 3 5 4 6 7 8 9</i></div>
+                                                <div class="textbox" style="padding-left: 10px;">Parcurgerea din nodul <i>2</i>: <i>2 1 4 5 7 8 9 6 3</i></div>
+                                                <div class="textbox" style="padding-left: 10px;">Parcurgerea din nodul <i>5</i>: <i>5 2 1 4 6 3 7 8 9</i></div>
+                                                <div class="textboxend" style="padding-left: 10px;">Parcurgerea din nodul <i>9</i>: <i>9 7 5 2 1 4 6 3 8<i></div>
+                                            </td><td width=40%>
+                                                <img src="../../src/graf/parcurgerea.png" alt="Graf conex" width=100%>
+                                            </td></tr>
+                                        </table>
+                                    </td></tr>
+                                </table>
+                                <div class="textbox" style="font-size: larger; padding-top: 10px; padding-left: 25px; padding-bottom: 10px;"><strong>Implementare C++</strong></div>
+                                <div style="padding-left: 50px; padding-bottom: 15px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #7F0055; font-weight: bold;">void</span> <span style="font-weight: bold;">dfs</span>(<span style="color: #7F0055; font-weight: bold;">int</span> k){
+	v[k]=1; <span style="color: #3F7F5F;">//vizităm vârful curent x</span>
+	<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> i=1;i&#x003C=n;i++) <span style="color: #3F7F5F;">//determinăm vecinii nevizitați a lui x</span>
+		<span style="color: #7F0055; font-weight: bold;">if</span>(a[k][i]==1 <span style="color: #7F0055; font-weight: bold;">and</span> v[i]==0)
+			dfs(i); <span style="color: #3F7F5F;">//continuăm parcurgerea cu vecinul curent i</span>
+}</pre>
+                                    </code>
+                                </div>
+                                <div class="textbox">În urma parcurgerii în adâncime, muchiile folosite pentru parcurgere formează un arbore.
+                                    Acest arbore este graf parțial al grafului dat (dacă graful este conex), și se numește arbore parțial de parcurgere.
+                                    Arborii de parcurgere ai unui graf sunt diferiți, în funcție de vârful de start.
+                                    Acest arbore poate fi stocat în memorie prin intermediul unui vector de tați: <i>t[k]=0</i>, vârful k este rădăcina arborelui, <i>t[k]=x</i>, vârful <i>x</i> este tatăl vârfului <i>k</i>.</div>
+                                <table width=100%>
+                                    <tr><td width=50%>
+                                        <div class="textbox" style="text-align: center; padding-top: 5px; padding-bottom: 15px;">Arborele de parcurgere pentru vârful de start <i>5</i></div>
+                                    </td><td width=50%>
+                                        <div class="textbox" style="text-align: center; padding-top: 5px; padding-bottom: 15px;">Arborele de parcurgere pentru vârful de start <i>9</i></div>
+                                    </td></tr>
+                                    <tr><td width=50%>
+                                        <img src="../../src/graf/parcurgerea1.png" alt="Arborele de parcurgere pentru vârful de start 5" width=33% style="display: block;" class="pagealign">
+                                    </td><td width=50%>
+                                        <img src="../../src/graf/parcurgerea2.png" alt="Arborele de parcurgere pentru vârful de start 9" width=33% style="display: block;" class="pagealign">
+                                    </td></tr>
+                                </table>
+                                <div class="textbox" style="font-size: larger; padding-top: 15px; padding-left: 25px; padding-bottom: 10px;"><strong>Implementare C++</strong></div>
+                                <div style="padding-left: 50px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #7F0055; font-weight: bold;">void</span> <span style="font-weight: bold;">dfs</span>(<span style="color: #7F0055; font-weight: bold;">int</span> k, <span style="color: #7F0055; font-weight: bold;">int</span> tata){
+	v[k]=1; <span style="color: #3F7F5F;">//vizităm vârful curent x</span>
+	t[k]=tata; <span style="color: #3F7F5F;">//completăm vectorul de tați</span>
+	<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> i=1;i&#x003C=n;i++) <span style="color: #3F7F5F;">//determinăm vecinii nevizitați ai lui x</span>
+		<span style="color: #7F0055; font-weight: bold;">if</span>(a[k][i]==1 <span style="color: #7F0055; font-weight: bold;">and</span> v[i]==0)
+			dfs(i,k); <span style="color: #3F7F5F;">//continuăm parcurgerea cu vecinul curent i</span>
+			<span style="color: #3F7F5F;">//acesta îl va avea ca tată pe k</span>
+}</pre>
+                                    </code>
+                                </div>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../../index.html" class="navlink">Teoria Grafurilor</a> / <a href="../parcurgere.html" class="navlink">Parcurgerea Grafurilor</a> / <a href="parcurgerea.html" class="navlink">Parcurgerea În Adâncime</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/navbar.css">
+        <link rel="stylesheet" href="../../css/pagewindow.css">
+        <link rel="stylesheet" href="../../css/pagenavbar.css">
+        <link rel="shortcut icon" type="image/png" href="../../src/favicon.png">
+        <title>Teoria grafurilor</title>
+    </head>
+    <body background="../../src/background.png">
+        <table width=80% height=100% class="pagealign">
+            <tr height=50x><td>
+                    <nav class="navbar">
+                        <li style="display: inline"><a class="navbaritem" href="../../index.html">GRAFURI</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grneorientate.html">NEORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../grorientate.html">ORIENTATE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../parcurgere.html">PARCURGERE</a></li>
+                        <li style="display: inline"><a class="navbaritem" href="../despre.html">DESPRE</a></li>
+                    </nav>
+            </td></tr>
+            <tr><td>
+                <table width=100% height=100% class="pageborder">
+                    <tr height=0px><th width=15% class="pageborder curentpage">Parcurgerea grafurilor</th>
+                    <td width=85% class="pageborder">
+                        <nav class="navpagebar">
+                             <li style="display: inline"><a class="pagenavbaritem pnbiborder" href="../parcurgere.html">Aplicații</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiborder" href="parcurgerea.html">Parcurgerea în adâncime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbibordera" href="parcurgerel.html">Parcurgerea în lățime</a></li
+                            ><li style="display: inline"><a class="pagenavbaritem pnbiactive" href="parcurgerearw.html">Algoritmul Roy-Warshall</a></li>
+                        </nav>
+                    </td></tr>
+                    <tr style="padding: 0;"><td colspan="2" style="padding: 0; vertical-align: top">
+                       <table width=100%>
+                            <tr><td style="padding: 15px; vertical-align: top;">
+                                <table width=100%>
+                                    <tr><td style="vertical-align: top;" width=50%>
+                                        <div class="textboxend">Într-un graf orientat <i>G=(V,U)</i> cu n noduri, Algoritmul Roy-Warshall construiește matricea drumurilor <i>D</i> cu <i>n</i> linii și <i>n</i> coloane.
+                                            În matricea drumurilor elementele cu indici egali vor avea întotdeauna valoarea <i>0</i>.
+                                            Putem accepta și elemente <i>D<sub>(i,i)</sub>=1</i>, înțelegând prin asta că există un circuit care conține nodul <i>i</i>.</div>
+                                    </td><td width=50%>
+                                        <img src="../../src/matrice/matricearw.svg" alt="Matrice de adiacență" width=100%>
+                                    </td></tr>
+                                </table>
+                                <div class="textbox" style="font-size: larger; padding-top: 15px; padding-bottom: 15px; padding-left: 25px;"><strong>Secvență C++</strong> (elementele de pe diagonală rămân 0)</div>
+                                <div style="padding-left: 50px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #3F7F5F;">//a - matricea de adiacență</span>
+<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> k=1;k&#x003C=n;k++)
+	<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> i=1;i&#x003C=n;i++)
+		<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> j=1;j&#x003C=n;j++)
+			<span style="color: #7F0055; font-weight: bold;">if</span>(i!=j <span style="color: #7F0055; font-weight: bold;">and</span> a[i][j]==0 <span style="color: #7F0055; font-weight: bold;">and</span> a[i][k]==1 <span style="color: #7F0055; font-weight: bold;">and</span> a[k][j]==1)
+				a[i][j]=1;</pre>
+                                    </code>
+                                </div>
+								<div class="textbox" style="font-size: larger; padding-top: 15px; padding-bottom: 15px; padding-left: 25px;"><strong>Secvență C++</strong> (variantă mai condensată)</div>
+                                <div style="padding-left: 50px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #3F7F5F;">//a - matricea de adiacență</span>
+<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> k=1;k&#x003C=n;k++)
+	<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> i=1;i&#x003C=n;i++)
+		<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> j=1;j&#x003C=n;j++)
+			<span style="color: #7F0055; font-weight: bold;">if</span>(i!=j <span style="color: #7F0055; font-weight: bold;">and</span> a[i][j]==0)
+				a[i][j]=a[i][k]*a[k][j];</pre>
+                                    </code>
+                                </div>
+								<div class="textbox" style="font-size: larger; padding-top: 15px; padding-left: 25px;"><strong>Secvență C++</strong> (transformă în <i>1</i> și elementele de pe diagonală care corespund unor noduri care fac parte din cel puțin un circuit)</div>
+                                <div style="padding-left: 50px;">
+                                    <code>
+<pre style="margin: 0; tab-size: 4; font-family: Consolas; font-size: larger;"><span style="color: #3F7F5F;">//a - matricea de adiacență</span>
+<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> k=1;k&#x003C=n;k++)
+	<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> i=1;i&#x003C=n;i++)
+		<span style="color: #7F0055; font-weight: bold;">for</span>(<span style="color: #7F0055; font-weight: bold;">int</span> j=1;j&#x003C=n;j++)
+			<span style="color: #7F0055; font-weight: bold;">if</span>(a[i][j]==0)
+				a[i][j]=a[i][k]*a[k][j];</pre>
+                                    </code>
+                                </div>
+                            </td></tr>
+                        </table>
+                    </td></tr>
+                </table>
+            </td></tr>
+            <tr height=25px><td>
+                <div class="texboxend" style="text-align: center; font-size: small; font-family: cursive;">&#x003C&#x003C <a href="../../index.html" class="navlink">Teoria Grafurilor</a> / <a href="../parcurgere.html" class="navlink">Parcurgerea Grafurilor</a> / <a href="parcurgerearw.html" class="navlink">Algoritmul Roy-Warshall</a> &#x003E&#x003E</div>
+            </td></tr>
+        </table>
+    </body>
+</html>
